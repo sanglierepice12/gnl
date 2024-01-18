@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.h                                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsuter <gostr@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 11:02:09 by gsuter            #+#    #+#             */
-/*   Updated: 2024/01/11 11:02:09 by gsuter           ###   ########.fr       */
+/*   Created: 2024/01/18 08:37:51 by gsuter            #+#    #+#             */
+/*   Updated: 2024/01/18 08:37:51 by gsuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL_H
-# define GNL_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
 
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 //GNL
-char	*ft_gnl(int fd);
+char	*get_next_line(int fd);
+/*char	*ft_read_copy(int fd, char *buf, ssize_t bytesread);*/
 
 //GNL UTILS
-char	*ft_read_copy(int fd, char *buf, char *line, ssize_t bytes_read);
-int		ft_end_line(char *buf);
-char	*ft_str_join(char const *s1, char const *s2);
-int		ft_strlen(const char *str);
-char	*ft_str_dup(const char *s1);
-void	ft_clean_buff(char *buf);
-char	*ft_str_dup(const char *s1);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(const char *s1, const char *s2);
+void	ft_clean_buf(char *buf);
+int		ft_endline(char *buf);
+ssize_t	ft_strlen(const char *s1);
+void	ft_bzero(char *str);
 
 #endif
